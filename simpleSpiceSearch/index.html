@@ -1,0 +1,30 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+</head>
+<body ng-app="spicesApp">
+
+	 
+<div id="searchSpices" ng-app="spicesApp" ng-controller="SpicesController">
+<h1> {{title}} </h1>
+<h3>Now you're cooking with spices!</h3>
+<div>
+	Search: <input text="" ng-model="searchText"/>
+</div>
+<h3> Keywords: </h3>
+<div ng-repeat="keyword in keywords">{{keyword}}</div>
+<h3> Spices Profile </h3>
+			<table>
+				<tr ng-repeat="spice in spices | filter:searchText">
+					<td>{{spice.name}}</td>
+					<td>{{spice.country}}</td>
+				</tr>
+			</table>
+
+</div>	 
+	<script src="js/spices.js"></script>
+	
+	<!-- Controllers -->
+    <script src="js/controllers/SpicesController.js"></script>
+</body>
+</html>
